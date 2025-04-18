@@ -232,6 +232,64 @@
     }
   }
   
+/* FLOATING CTA BUTTON */
+.floating-cta {
+    position: fixed;
+    bottom: 1.2rem;
+    right: 1rem;
+    background-color: #1f5e1f;
+    color: #ffffff;
+    border: none;
+    border-radius: 999px;
+    font-weight: 800;
+    text-decoration: none;
+    text-align: center;
+    z-index: 999;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.4s ease-in-out, transform 0.3s ease;
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.2);
+    padding: 0.6rem 1.4rem;
+    font-size: 1rem;
+  }
+  
+  /* Show state */
+  .floating-cta.show {
+    opacity: 1;
+    pointer-events: auto;
+  }
+  
+  /* Subtle pulse animation */
+  @keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.06); }
+    100% { transform: scale(1); }
+  }
+  
+  .floating-cta.pulsing {
+    animation: pulse 1.6s ease-in-out 1;
+    animation-delay: 0.3s;
+  }
+  
+  /* Tablet/Desktop: Slightly larger + offset */
+  @media (min-width: 768px) {
+    .floating-cta {
+      font-size: 1.1rem;
+      padding: 0.75rem 1.8rem;
+      bottom: 2rem;
+      right: 2rem;
+    }
+  }
+  
+  /* Large desktop: Match large CTA exactly */
+  @media (min-width: 1366px) {
+    .floating-cta {
+      font-size: 1.3rem;
+      padding: 1rem 2.2rem;
+    }
+  }
+  
+  
   
   
   
@@ -537,7 +595,10 @@
       width: 80%;
     }
   }  
+ 
   
+
+
 /* TESTIMONIALS */
 .testimonials {
     background-color: #ffffff;
@@ -639,6 +700,28 @@
     color: #333;
     line-height: 1.6;
   }
+
+  @media (max-width: 768px) {
+    .faq {
+      padding: 4rem 1rem 3rem; /* tighter top and bottom */
+    }
+  
+    .faq h2 {
+      margin-bottom: 2rem;
+      font-size: 2rem;
+      line-height: 1.3;
+    }
+  
+    .faq-item p {
+      max-width: 90%;
+      margin: 0 auto;
+      font-size: 1rem;
+    }
+  
+    .faq-wrapper {
+      gap: 1.5rem;
+    }
+  }  
   
   /* FOOTER */
   .footer {
@@ -705,4 +788,23 @@
     }
   }
   
+  @media (max-width: 768px) {
+    .trust-section,
+    .how-it-works,
+    .services,
+    .contractors,
+    .testimonials,
+    .faq {
+      padding: 3rem 1rem;
+    }
+  
+    .trust-section h2,
+    .how-it-works h2,
+    .services h2,
+    .contractors h2,
+    .testimonials h2,
+    .faq h2 {
+      margin-bottom: 1.5rem;
+    }
+  }
   

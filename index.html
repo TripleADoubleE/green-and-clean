@@ -9,6 +9,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
+    <a href="#services" class="floating-cta" id="floatingBookNow">Book Now</a>
 
 
 <!-- HERO SECTION -->
@@ -161,8 +162,8 @@
   </section>
   
   
-  <!-- FOOTER -->
-  <footer id="contact" class="footer">
+<!-- FOOTER -->
+<footer id="contact" class="footer">
     <div class="footer-links">
       <a href="#">About Us</a>
       <a href="#">Privacy Policy</a>
@@ -171,4 +172,29 @@
     </div>
     <p>&copy; 2025 Green and Clean Ltd. All rights reserved.</p>
   </footer>
+  
+  <!-- FLOATING BOOK NOW CTA -->
+  <a href="#services" class="floating-cta" id="floatingBookNow">Book Now</a>
+  
+  <!-- SCRIPT: Show button after hero fully off screen -->
+  <script>
+    const hero = document.querySelector('.hero-banner');
+    const button = document.getElementById('floatingBookNow');
+  
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (!entry.isIntersecting && entry.boundingClientRect.bottom <= 0) {
+          button.classList.add('show');
+          setTimeout(() => button.classList.add('pulsing'), 300);
+        } else {
+          button.classList.remove('show', 'pulsing');
+        }
+      },
+      { threshold: 0 }
+    );
+  
+    if (hero) observer.observe(hero);
+  </script>
+  </body>
+  </html>
   
