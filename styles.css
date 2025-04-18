@@ -107,12 +107,8 @@
   
   /* BOOK NOW BUTTON */
   .book-now-container {
-    position: absolute;
-    bottom: 14%;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 5;
-  }
+    margin-top: 2rem;
+  }  
   
   .large-cta {
     background-color: #1f5e1f;
@@ -165,10 +161,6 @@
       font-size: 1.15rem;
       padding: 0 1rem;
       max-width: 90vw;
-    }
-  
-    .book-now-container {
-      bottom: 18%;
     }
   
     .large-cta {
